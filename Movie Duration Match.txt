@@ -1,0 +1,7 @@
+Q. Link: https://platform.stratascratch.com/coding/10360-movie-duration-match?code_type=1
+
+SELECT flight_id,movie_id,e.duration
+FROM entertainment_catalog e JOIN flight_schedule f
+ON e.duration <= f.flight_duration
+WHERE
+    f.flight_id = '101'

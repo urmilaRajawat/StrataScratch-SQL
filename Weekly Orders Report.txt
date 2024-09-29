@@ -1,0 +1,6 @@
+Link:https://platform.stratascratch.com/coding/10363-weekly-orders-report?code_type=1
+
+SELECT week,SUM(quantity)
+FROM orders_analysis
+WHERE DATE_PART('month',week) IN (1,2,3) AND DATE_PART('YEAR',week) = 2023
+GROUP BY 1

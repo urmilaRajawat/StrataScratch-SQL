@@ -1,0 +1,11 @@
+Q. Link: httpsplatform.stratascratch.comcoding10308-salaries-differencescode_type=1
+
+WITH CTE AS (
+    SELECT 
+        MAX(CASE WHEN d.department = 'engineering' THEN e.salary END) AS eng,
+        MAX(CASE WHEN d.department = 'marketing' THEN e.salary END) AS mark
+    FROM db_employee e 
+    JOIN db_dept d ON e.department_id = d.id
+)
+SELECT ABS(eng - mark) AS difference
+FROM CTE;

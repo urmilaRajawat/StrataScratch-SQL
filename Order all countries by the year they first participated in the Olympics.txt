@@ -1,0 +1,7 @@
+Q. Link:https://platform.stratascratch.com/coding/10184-order-all-countries-by-the-year-they-first-participated-in-the-olympics?code_type=1
+
+
+select noc, MIN(year)
+FROM olympics_athletes_events
+GROUP BY 1
+ORDER BY 2,1

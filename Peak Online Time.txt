@@ -1,0 +1,9 @@
+Link:https://platform.stratascratch.com/coding/10361-peak-online-time?code_type=1
+
+SELECT 
+ MAX(user_count) AS User_count, 
+ CONCAT(start_timestamp,' to ',end_timestamp) AS time_period,device_type
+FROM user_activity
+WHERE  RANK() OVER (PARTITION BY device_type ORDER BY user_count DESC) as rnk = 1
+GROUP BY start_timestamp,end_timestamp,device_type
+ORDER BY User_count desc
